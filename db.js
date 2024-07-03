@@ -1,6 +1,8 @@
 const mongoose=require('mongoose');
+require('dotenv').config();
+const REMOTE_DB_URL=process.env.REMOTE_DB_URL;
 
-mongoose.connect('mongodb://localhost:27017/student-api');
+mongoose.connect(REMOTE_DB_URL);
 const db=mongoose.connection;
 
 db.on('connected',function(){
